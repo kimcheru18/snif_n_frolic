@@ -9,7 +9,7 @@ This site is for a small dog walking business to display information and rates a
 
 
 # Screenshots
-![image1](https://github.com/kimcheru18/define-statement-of-purpose-node-capstone/blob/master/github-images/landing-page.png)
+![image1](https://github.com/kimcheru18/snif_n_frolic/blob/master/screenshots/snf_landing_page_screenshot.png)
 
 
 # User Stories & Initial UX
