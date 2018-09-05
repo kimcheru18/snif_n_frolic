@@ -72,10 +72,6 @@ a:hover {
 }
 
 /*header navigation styles*/
-header {
-    font-size: 0;
-}
-
 header section {
     width: 100%;
     position: fixed;
@@ -111,6 +107,8 @@ figure:nth-of-type(4) {
 nav a {
     padding: 0 1.5rem;
     font-size: 1.5rem;
+    width: 30%;
+/*    border: 1px solid black;*/
 }
 
 /*main styles*/
@@ -160,8 +158,11 @@ tbody tr td {
 /*footer styles*/
 footer {
     padding: 1rem 0;
+    text-align: left;
+    padding: 1rem;
 }
 
+/* ***All responsive designs below*** */
 /*iPhone portrait*/
 
 @media only screen and (min-width: 320px) {
