@@ -4,11 +4,10 @@ Link to live application:
 
 # Goal & Use Case
 
-This site is for a small dog walking business to display information and rates about the business.
-
-
+This site is for a small dog walking business to display rates and information about the business.
 
 # Screenshots
+
 ![image1](https://github.com/kimcheru18/snif_n_frolic/blob/master/screenshots/snf_landing_page_screenshot.png)
 
 

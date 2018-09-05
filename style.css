@@ -49,7 +49,7 @@ Is a short set of CSS rules that resets the styling of all HTML elements to a co
 }
 
 
-/*general styles*/
+/* ***All general styles*** */
 body {
     text-align: center;
     font-family: 'Oswald', sans-serif;
@@ -71,9 +71,18 @@ a:hover {
     color: #3e548c;
 }
 
-/*header navigation styles*/
+/* ***All header and navigation styles*** */
+header {
+/*
+    background-color: white;
+    width: 100%;
+    position: fixed;
+*/
+}
+
 header section {
     width: 100%;
+    height: 300px;
     position: fixed;
     background: -webkit-linear-gradient(top, #ffffff, rgba(0, 0, 0, .5));
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 10%, 0 61%);
@@ -84,40 +93,45 @@ header h1 {
     padding: 1rem 0 0 1rem;
     text-align: left;
     font-size: 2.5rem;
-    height: 300px;
 }
 
 figure {
-    height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-figure:nth-of-type(1) {
+header figure {
+    height: 300px;
+}
+
+header figure:nth-of-type(1) {
     background-image: url('images/hero-image.jpg');
 }
 
-figure:nth-of-type(2),
-figure:nth-of-type(3),
-figure:nth-of-type(4) {
+header figure:nth-of-type(2),
+header figure:nth-of-type(3),
+header figure:nth-of-type(4) {
     display: none;
+}
+
+nav {
+    padding-top: 19rem;
 }
 
 nav a {
     padding: 0 1.5rem;
     font-size: 1.5rem;
-    width: 30%;
-/*    border: 1px solid black;*/
 }
 
-/*main styles*/
+/* All main styles*/
 main section {
     width: 90%;
     max-width: 600px;
-    margin: 2rem auto;
+    margin: 1rem auto;
     letter-spacing: .5px;
     background-color: #f1f1f1;
+    padding-bottom: 1rem;
 }
 
 main section h1 {
@@ -125,10 +139,25 @@ main section h1 {
     padding: 1rem 0;
 }
 
+main section:nth-of-type(1) figure img {
+    display: none;
+}
+
 main section p {
     font-size: 1.1rem;
-    padding: .75rem;
+}
+
+main section p {
     text-align: left;
+    padding-left: .75rem;
+}
+
+main section:nth-of-type(2) p {
+    padding-top: .75rem;
+}
+
+main section p:not(:last-child) {
+    padding: .75rem;
 }
 
 main section a {
@@ -175,57 +204,64 @@ footer {
 /*iPhone landscape*/
 
 @media only screen and (min-width: 480px) {
-    body {
-/*        color: green;*/
-    }
-
     thead tr th {
         font-size: 1.5rem;
     }
-
 }
 
 
 /*ipad potrait*/
 
 @media only screen and (min-width: 768px) {
-    body {
-/*        color: red;*/
+    header {
+        background-color: white;
+        width: 100%;
+        position: fixed;
     }
 
     header section {
+        width: 100%;
+        position: absolute;
+    }
+
+    header section {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 10%, 0 35%);
         clip-path: polygon(0 0, 100% 0, 100% 10%, 0 35%);
     }
 
-    figure {
+    header figure {
         width: 23.5%;
         height: 300px;
         margin: .25rem;
     }
 
-    figure:nth-of-type(1),
-    figure:nth-of-type(3),
-    figure:nth-of-type(4) {
+    header figure:nth-of-type(1),
+    header figure:nth-of-type(3),
+    header figure:nth-of-type(4) {
        background-position: center right;
     }
 
-    figure:nth-of-type(1),
-    figure:nth-of-type(2),
-    figure:nth-of-type(3),
-    figure:nth-of-type(4) {
+    header figure:nth-of-type(1),
+    header figure:nth-of-type(2),
+    header figure:nth-of-type(3),
+    header figure:nth-of-type(4) {
       display: inline-block;
     }
 
-    figure:nth-of-type(2) {
+    header figure:nth-of-type(2) {
         background-image: url('images/charlyDrinking.jpg');
     }
 
-    figure:nth-of-type(3) {
+    header figure:nth-of-type(3) {
         background-image: url('images/momo_on_bridge.jpg');
     }
 
-    figure:nth-of-type(4) {
+    header figure:nth-of-type(4) {
         background-image: url('images/meCharly.jpg');
+    }
+
+    nav {
+        padding-top: 19rem;
     }
 }
 
@@ -233,7 +269,52 @@ footer {
 /*ipad lanscape / small laptop*/
 
 @media only screen and (min-width: 1024px) {
-    body {
-/*        color: blue;*/
+}
+
+
+/* ***Print page styles*** */
+@media only print {
+    * {
+        background-color: white;
+        color: black;
+    }
+
+    header figure,
+    #contact a,
+    footer {
+        display: none;
+    }
+
+    header h1 {
+        text-align: center;
+    }
+
+    header section {
+        -webkit-clip-path: none;
+        clip-path: none;
+        height: auto;
+    }
+
+    nav {
+        padding-top: 0;
+    }
+
+    main {
+        margin: 2rem;
+    }
+
+    main section:nth-of-type(1) figure img {
+        display: block;
+        width: 200px;
+        height: 200px;
+        float: right;
+        margin: 1rem;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        vertical-align: middle;
+    }
+
+    #contact:after {
+        content: "Call or text: (206) 919-2284, Email: SniffNFrolic@comcast.net";
     }
 }
