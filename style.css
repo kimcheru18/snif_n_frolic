@@ -114,14 +114,9 @@ header figure:nth-of-type(3),
 header figure:nth-of-type(4) {
     display: none;
 }
-
-nav {
-    padding-top: 19rem;
-}
-
 nav a {
-    padding: 0 1.5rem;
-    font-size: 1.5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
 }
 
 /* All main styles*/
@@ -135,7 +130,7 @@ main section {
 }
 
 main section h1 {
-    font-size: 1.65rem;
+    font-size: 1.25rem;
     padding: 1rem 0;
 }
 
@@ -262,6 +257,14 @@ footer {
 
     nav {
         padding-top: 19rem;
+    }
+
+    nav a {
+        font-size: 1.5rem;
+    }
+
+    main section h1 {
+        font-size: 1.65rem;
     }
 }
 
