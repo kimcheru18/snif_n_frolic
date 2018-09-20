@@ -84,12 +84,9 @@ function displayPrices(){
 
 
 function printPage(){
-//    document.querySelector('#print').addEventListener('click', print);
-//    console.log('here');
+   document.querySelector('#print').addEventListener('click', printDoc);
 }
 
-function print(e){
-    //I know I need another e in here somewhere
-//    window.print();
+function printDoc(e){
+   window.print();
 }
-
