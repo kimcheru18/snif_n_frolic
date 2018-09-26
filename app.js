@@ -3,14 +3,14 @@ let priceArray = [
         numPets: '1 dog',
         frequency: '5 days per week',
         time: '20-30 min',
-        price: '$45'
+        price: '$50'
     },
 
     {
         numPets: '1 dog',
         frequency: '3 days per week',
         time: '20-30 min',
-        price: '$30'
+        price: '$35'
     },
 
     {
@@ -24,21 +24,21 @@ let priceArray = [
         numPets: '2 dogs',
         frequency: '5 days per week',
         time: '20-30 min',
-        price: '$55'
+        price: '$60'
     },
 
     {
         numPets: '2 dogs',
         frequency: '3 days per week',
         time: '20-30 min',
-        price: '$40'
+        price: '45'
     },
 
     {
         numPets: '2 dogs',
         frequency: '1 time',
         time: '20-30 min',
-        price: '$15'
+        price: '$17'
     },
 ]
 
@@ -47,6 +47,47 @@ document.addEventListener('DOMContentLoaded', init);
 function init(){
     displayPrices();
     printPage();
+
+    document.querySelector('#about').classList.add('hide');
+    document.querySelector('#prices').classList.add('hide');
+    document.querySelector('#contact').classList.add('hide');
+    document.querySelector('#gallery').classList.add('hide');
+
+    document.querySelector('#home-nav').addEventListener('click', function() {
+        document.querySelector('#about').classList.add('hide');
+        document.querySelector('#prices').classList.add('hide');
+        document.querySelector('#contact').classList.add('hide');
+        document.querySelector('#gallery').classList.add('hide');
+    });
+
+    document.querySelector('#about-nav').addEventListener('click', function() {
+        document.querySelector('#about').classList.remove('hide');
+        document.querySelector('#prices').classList.add('hide');
+        document.querySelector('#contact').classList.add('hide');
+        document.querySelector('#gallery').classList.add('hide');
+    });
+
+    document.querySelector('#prices-nav').addEventListener('click', function() {
+        document.querySelector('#about').classList.add('hide');
+        document.querySelector('#prices').classList.remove('hide');
+        document.querySelector('#contact').classList.add('hide');
+        document.querySelector('#gallery').classList.add('hide');
+    });
+
+    document.querySelector('#contact-nav').addEventListener('click', function() {
+        document.querySelector('#about').classList.add('hide');
+        document.querySelector('#prices').classList.add('hide');
+        document.querySelector('#contact').classList.remove('hide');
+        document.querySelector('#gallery').classList.add('hide');
+    });
+
+    document.querySelector('#gallery-nav').addEventListener('click', function() {
+        document.querySelector('#about').classList.add('hide');
+        document.querySelector('#prices').classList.add('hide');
+        document.querySelector('#contact').classList.add('hide');
+        document.querySelector('#gallery').classList.remove('hide');
+    });
+
 }
 
 function displayPrices(){

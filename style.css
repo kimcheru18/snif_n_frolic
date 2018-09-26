@@ -53,6 +53,7 @@ Is a short set of CSS rules that resets the styling of all HTML elements to a co
 body {
     text-align: center;
     font-family: 'Oswald', sans-serif;
+/*    background-color: #4b597b;*/
 }
 
 h1 {
@@ -61,24 +62,22 @@ h1 {
     color: #3e548c;
 }
 
-a {
-    color: #272020;
-    text-decoration: none;
+nav:nth-of-type(1){
+    padding-top: 11.5rem;
 }
 
-a:hover {
+nav a {
+    color: #272020;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav:nth-of-type(1) a:hover {
     text-decoration: underline;
     color: #3e548c;
 }
 
 /* ***All header and navigation styles*** */
-header {
-/*
-    background-color: white;
-    width: 100%;
-    position: fixed;
-*/
-}
 
 header section {
     width: 100%;
@@ -93,30 +92,51 @@ header h1 {
     padding: 1rem 0 0 1rem;
     text-align: left;
     font-size: 2.5rem;
+    z-index: 10;
 }
 
-figure {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-header figure {
-    height: 300px;
-}
-
-header figure:nth-of-type(1) {
-    background-image: url('images/hero-image.jpg');
-}
-
-header figure:nth-of-type(2),
-header figure:nth-of-type(3),
-header figure:nth-of-type(4) {
-    display: none;
-}
 nav a {
-    padding: 0 1rem;
-    font-size: 1rem;
+    padding: 0 .5rem;
+    font-size: 1.25rem;
+}
+
+nav section {
+    display: inline-block;
+    width: 200px;
+    height: 250px;
+    margin: .5rem;
+/*    border: 1px solid #556486;*/
+    box-shadow: 1px 1px 1px grey;
+}
+
+nav section:hover {
+    box-shadow: 3px 3px 2px #ccc6c6;
+/*    color: white;*/
+}
+
+nav figure {
+    margin-bottom: .5rem;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+nav:nth-of-type(2) section:nth-of-type(1) figure {
+    background-image: url(images/hero-image.jpg);
+}
+
+nav:nth-of-type(2) section:nth-of-type(2) figure {
+    background-image: url(images/charlyDrinking.jpg);
+}
+
+nav:nth-of-type(2) section:nth-of-type(3) figure {
+    background-image: url(images/momo_rocks.jpg);
+}
+
+nav:nth-of-type(2) section:nth-of-type(4) figure {
+    background-image: url(images/charlyRedBall%20copy.JPG);
 }
 
 /* All main styles*/
@@ -125,37 +145,20 @@ main section {
     max-width: 600px;
     margin: 1rem auto;
     letter-spacing: .5px;
-    background-color: #f1f1f1;
     padding-bottom: 1rem;
 }
 
 main section h1 {
     font-size: 1.25rem;
-    padding: 1rem 0;
-}
-
-main section:nth-of-type(1) figure img {
-    display: none;
 }
 
 main section p {
     font-size: 1.1rem;
-}
-
-main section p {
     text-align: left;
-    padding-left: .75rem;
+    padding: .75rem 0 0 .75rem;
 }
 
-main section:nth-of-type(2) p {
-    padding-top: .75rem;
-}
-
-main section p:not(:last-child) {
-    padding: .75rem;
-}
-
-main section a {
+main section:nth-of-type(3) a {
     display: block;
 }
 
@@ -177,6 +180,10 @@ tbody tr:hover {
 
 tbody tr td {
     border-bottom: 2px solid white;
+}
+
+.hide {
+    display: none;
 }
 
 /*footer styles*/
@@ -209,54 +216,8 @@ footer {
 
 @media only screen and (min-width: 768px) {
     header {
-        background-color: white;
         width: 100%;
         position: fixed;
-    }
-
-    header section {
-        width: 100%;
-        position: absolute;
-    }
-
-    header section {
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 10%, 0 35%);
-        clip-path: polygon(0 0, 100% 0, 100% 10%, 0 35%);
-    }
-
-    header figure {
-        width: 23.5%;
-        height: 300px;
-        margin: .25rem;
-    }
-
-    header figure:nth-of-type(1),
-    header figure:nth-of-type(3),
-    header figure:nth-of-type(4) {
-       background-position: center right;
-    }
-
-    header figure:nth-of-type(1),
-    header figure:nth-of-type(2),
-    header figure:nth-of-type(3),
-    header figure:nth-of-type(4) {
-      display: inline-block;
-    }
-
-    header figure:nth-of-type(2) {
-        background-image: url('images/charlyDrinking.jpg');
-    }
-
-    header figure:nth-of-type(3) {
-        background-image: url('images/momo_on_bridge.jpg');
-    }
-
-    header figure:nth-of-type(4) {
-        background-image: url('images/meCharly.jpg');
-    }
-
-    nav {
-        padding-top: 19rem;
     }
 
     nav a {
